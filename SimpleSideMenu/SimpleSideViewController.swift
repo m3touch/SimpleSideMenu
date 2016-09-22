@@ -65,7 +65,7 @@ class SimpleSideViewController: UIViewController, MenuTableDelegate {
     
     // MARK: Menu Table Delegation
     func menuButtonSelected(at indexPath: IndexPath) {
-        print ("Menu :: a button has been selected: \(indexPath.description)")
+        print ("Core :: button \(indexPath.row) has been selected in submenu \(indexPath.section)")
     }
 }
 
