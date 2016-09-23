@@ -8,11 +8,24 @@
 
 import UIKit
 
+protocol SimpleSideMenuDelegate {
+    
+}
+
 class SimpleSideViewController: UIViewController, MenuTableDelegate {
     
-    var menu: MenuTableViewController? { didSet { configureMenu() } }
     
-
+    // MARK: PUBLIC VARIABLES
+    public var delegate: SimpleSideMenuDelegate?
+    
+    // MARK: PRIVATE VARIABLES
+    private var menu: MenuTableViewController? { didSet { configureMenu() } }
+    
+    // MARK: OUTLETS
+    @IBOutlet weak var centralControllerView: UIView!
+    
+    
+    
     // MARK: Class Life Cycle
     
     override func viewDidLoad() {
@@ -21,11 +34,15 @@ class SimpleSideViewController: UIViewController, MenuTableDelegate {
         print("viewDidLoad")
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    // MARK: Central Controller Initiallisation
+    
+    private func configureCentralControllerView() {
+        print("configureCentralControllerView")
     }
+    
+    
     
     // MARK: Table View Controller Initiallisation
     
@@ -63,7 +80,7 @@ class SimpleSideViewController: UIViewController, MenuTableDelegate {
         menu?.myDelegate = self
     }
     
-    // MARK: Menu Table Delegation
+    // Menu Table Delegation
     func menuButtonSelected(at indexPath: IndexPath) {
         print ("Core :: button \(indexPath.row) has been selected in submenu \(indexPath.section)")
     }

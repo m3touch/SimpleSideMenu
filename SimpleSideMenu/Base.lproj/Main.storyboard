@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11191" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11156"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,18 +27,30 @@
                                     <segue destination="gOC-fY-OhT" kind="embed" identifier="EmbeedMenu" id="rRK-tc-C7A"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TL2-KH-Re5">
+                                <connections>
+                                    <segue destination="ndg-f8-Chb" kind="embed" id="Ckf-gy-8w3"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zq6-GP-e86" secondAttribute="bottom" id="3An-se-THi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TL2-KH-Re5" secondAttribute="bottom" id="81z-u9-pPz"/>
+                            <constraint firstItem="TL2-KH-Re5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EvO-I0-Mlm"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iO6-QP-npb" secondAttribute="bottom" id="GNM-v2-Mni"/>
                             <constraint firstItem="zq6-GP-e86" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KTi-Mh-OmT"/>
                             <constraint firstItem="iO6-QP-npb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Nfz-fH-zL9"/>
+                            <constraint firstAttribute="trailing" secondItem="TL2-KH-Re5" secondAttribute="trailing" id="PFd-C7-57d"/>
                             <constraint firstItem="iO6-QP-npb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SP2-QX-fcJ"/>
+                            <constraint firstItem="TL2-KH-Re5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZCL-ib-AGH"/>
                             <constraint firstAttribute="trailing" secondItem="zq6-GP-e86" secondAttribute="trailing" id="mPJ-VP-8us"/>
                             <constraint firstItem="zq6-GP-e86" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zk1-bm-jFx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="centralControllerView" destination="TL2-KH-Re5" id="bj3-KN-wiG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,7 +70,7 @@
                                 <rect key="frame" x="0.0" y="56" width="240" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sQW-Fv-eU9" id="PzI-uq-Q3Q">
-                                    <frame key="frameInset" width="240" height="43"/>
+                                    <frame key="frameInset" width="240" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
@@ -76,19 +88,15 @@
             </objects>
             <point key="canvasLocation" x="-75" y="841"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="gtc-Dv-LZV">
+        <!--Central Controller-->
+        <scene sceneID="e1c-bm-95g">
             <objects>
-                <viewController id="R5S-bj-MwD" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="e1Q-x0-skY"/>
-                        <viewControllerLayoutGuide type="bottom" id="SLz-2S-shS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="a9c-rH-frZ">
+                <viewController id="ndg-f8-Chb" customClass="CentralController" customModule="SimpleSideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0UD-Vx-nYa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content to Show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6St-EQ-DR4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content to Show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckh-fi-N1J">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -96,14 +104,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6St-EQ-DR4" firstAttribute="centerX" secondItem="a9c-rH-frZ" secondAttribute="centerX" id="RVh-Cm-g2J"/>
-                            <constraint firstItem="6St-EQ-DR4" firstAttribute="centerY" secondItem="a9c-rH-frZ" secondAttribute="centerY" id="vUX-FG-TU7"/>
+                            <constraint firstItem="ckh-fi-N1J" firstAttribute="centerY" secondItem="0UD-Vx-nYa" secondAttribute="centerY" id="Ghi-5Z-otT"/>
+                            <constraint firstItem="ckh-fi-N1J" firstAttribute="centerX" secondItem="0UD-Vx-nYa" secondAttribute="centerX" id="XWx-IV-68k"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="frh-Ip-N8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U02-Wk-5nf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="754" y="37"/>
+            <point key="canvasLocation" x="794" y="-293"/>
         </scene>
     </scenes>
     <resources>
